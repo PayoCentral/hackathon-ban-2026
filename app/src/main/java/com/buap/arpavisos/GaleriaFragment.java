@@ -55,7 +55,7 @@ public class GaleriaFragment extends Fragment {
         });
 
         // Load the required faculty gallery URL
-        binding.webviewGaleria.loadUrl("https://ejemplo-galeria-facultad.com");
+        binding.webviewGaleria.loadUrl("https://galeria.arpa.buap.mx/");
     }
 
     @Override
