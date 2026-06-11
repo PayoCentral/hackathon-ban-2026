@@ -30,21 +30,21 @@ public class ClubsFragment extends Fragment {
         // Setup LayoutManager
         binding.rvClubs.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Create mock clubs list
+        // Create mock clubs list with specified elements
         List<ClubItem> clubs = new ArrayList<>();
         clubs.add(new ClubItem(
+                "Taller de Grabado Experimental",
+                "Artes Plásticas • Coord. Andrei Carro",
+                "En curso",
+                "Taller enfocado en explorar técnicas de impresión no convencionales, uso de tintas alternativas y soportes experimentales.",
+                "Martes y Jueves de 04:00 PM a 06:00 PM"
+        ));
+        clubs.add(new ClubItem(
                 "Taller de Pintura Óleo",
-                "Artes Plásticas • Sabados 10:00 hrs",
+                "Artes Plásticas • Sábados 10:00 hrs",
                 "Activa",
                 "Aprende las técnicas tradicionales del óleo, mezcla de pigmentos y teoría del color. Dirigido a principiantes e intermedios.",
                 "Sábados de 10:00 AM a 01:00 PM"
-        ));
-        clubs.add(new ClubItem(
-                "Club de Cine Debate",
-                "Artes Audiovisuales • Miércoles 14:00 hrs",
-                "En curso",
-                "Proyección y análisis crítico de obras del cine independiente, experimental y clásicos internacionales. Fomentando la discusión artística.",
-                "Miércoles de 02:00 PM a 04:00 PM"
         ));
         clubs.add(new ClubItem(
                 "Colectivo de Fotografía Urbana",
@@ -65,7 +65,6 @@ public class ClubsFragment extends Fragment {
         ClubsAdapter adapter = new ClubsAdapter(clubs, new ClubsAdapter.OnClubClickListener() {
             @Override
             public void onClubClick(ClubItem club) {
-                // Navigate to ClubDetailFragment passing details
                 navigateToDetail(club);
             }
         });
@@ -73,7 +72,6 @@ public class ClubsFragment extends Fragment {
     }
 
     private void navigateToDetail(ClubItem club) {
-        // Build arguments
         Bundle args = new Bundle();
         args.putString("title", club.getTitle());
         args.putString("category", club.getCategory());
@@ -84,11 +82,10 @@ public class ClubsFragment extends Fragment {
         ClubDetailFragment detailFragment = new ClubDetailFragment();
         detailFragment.setArguments(args);
 
-        // Perform fragment transaction with backstack history
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, detailFragment)
-                .addToBackStack(null) // Ensures user can go back to listing
+                .addToBackStack(null)
                 .commit();
     }
 

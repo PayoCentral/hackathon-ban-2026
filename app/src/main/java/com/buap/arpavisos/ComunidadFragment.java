@@ -29,55 +29,73 @@ public class ComunidadFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Setup LayoutManager
+        // Setup LayoutManagers (rvEvents is horizontal, rvFeed is vertical)
+        binding.rvEvents.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.rvFeed.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Show progress bar to represent loading state (UX feedback)
+        // Show progress bar
         binding.pbLoading.setVisibility(View.VISIBLE);
-        binding.rvFeed.setVisibility(View.GONE);
+        binding.nestedScrollView.setVisibility(View.GONE);
 
-        // Simulate network fetch with a brief delay
+        // Fetch mock data with minor delay for system status visibility
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (binding == null) return;
 
-                // Create mock news list
+                // 1. Featured Events Carousel Data
+                List<NewsItem> events = new ArrayList<>();
+                events.add(new NewsItem(
+                        "Muestra de Fin de Semestre",
+                        "Domingo 14 de Junio, 2026",
+                        "Lugar: Explanada de la Facultad (10:00 - 18:00 hrs)",
+                        "Destacado"
+                ));
+                events.add(new NewsItem(
+                        "Clase Magistral: Grabado",
+                        "Jueves 18 de Junio, 2026",
+                        "Lugar: Taller de Estampado (11:00 hrs)",
+                        "Talleres"
+                ));
+                events.add(new NewsItem(
+                        "Festival Cortos ARPA",
+                        "Lunes 22 de Junio, 2026",
+                        "Lugar: Auditorio Principal (16:00 hrs)",
+                        "Cine"
+                ));
+
+                EventCarouselAdapter carouselAdapter = new EventCarouselAdapter(events);
+                binding.rvEvents.setAdapter(carouselAdapter);
+
+                // 2. News and Announcements Data
                 List<NewsItem> news = new ArrayList<>();
                 news.add(new NewsItem(
-                        "Exposición Colectiva 'Luz y Sombra'",
-                        "12 Jun, 2026",
-                        "Los alumnos de la Licenciatura en Artes Visuales presentan su proyecto de fin de curso. Galería 1 del Edificio Central.",
-                        "Evento"
-                ));
-                news.add(new NewsItem(
-                        "Convocatoria: Festival de Cortometrajes ARPA",
-                        "15 Jun, 2026",
-                        "Abierta la recepción de propuestas cinematográficas de temática libre. Envía tu cortometraje antes del 30 de junio de 2026.",
+                        "Convocatoria: Residencia Artística",
+                        "Publicado: 10 de Junio, 2026",
+                        "Oportunidad de realizar una estancia de creación artística en el extranjero. Consulta las bases en Secretaría de Extensión Cultural.",
                         "Convocatoria"
                 ));
                 news.add(new NewsItem(
-                        "Clase Magistral: Técnicas de Grabado Contemporáneo",
-                        "18 Jun, 2026",
-                        "Impartida por el renombrado artista invitado Mtro. Alberto Domínguez. Registro gratuito en Secretaría Académica.",
+                        "Exposición Colectiva 'Luz y Sombra'",
+                        "Publicado: 08 de Junio, 2026",
+                        "Inauguración de la galería con proyectos destacados de fin de curso de la Licenciatura en Artes Visuales.",
                         "Evento"
                 ));
                 news.add(new NewsItem(
-                        "Requisitos para Reinscripción Otoño 2026",
-                        "20 Jun, 2026",
-                        "Conoce las fechas de reinscripción, costos de matrícula y las materias disponibles para este nuevo periodo escolar.",
+                        "Reinscripciones Periodo Otoño 2026",
+                        "Publicado: 05 de Junio, 2026",
+                        "Se han publicado las guías de materias y horarios autorizados para las inscripciones correspondientes al ciclo Otoño 2026.",
                         "Noticia"
                 ));
 
-                // Bind adapter
-                NewsAdapter adapter = new NewsAdapter(news);
-                binding.rvFeed.setAdapter(adapter);
+                NewsAdapter newsAdapter = new NewsAdapter(news);
+                binding.rvFeed.setAdapter(newsAdapter);
 
-                // Hide progress, show feed
+                // Hide progress, show scroll
                 binding.pbLoading.setVisibility(View.GONE);
-                binding.rvFeed.setVisibility(View.VISIBLE);
+                binding.nestedScrollView.setVisibility(View.VISIBLE);
             }
-        }, 600);
+        }, 500);
     }
 
     @Override

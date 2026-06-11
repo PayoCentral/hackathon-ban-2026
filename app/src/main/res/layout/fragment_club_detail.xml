@@ -43,10 +43,10 @@
                 android:id="@+id/tv_detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Club de Cine Debate"
-                android:textColor="@color/textPrimary"
+                android:textColor="@color/colorOnSurface"
                 android:textSize="26sp"
                 android:textStyle="bold"
+                android:fontFamily="serif"
                 android:layout_marginBottom="8dp" />
 
             <!-- Category & Details Card -->
@@ -54,8 +54,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="1dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <LinearLayout
@@ -117,9 +119,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripción del Club"
-                android:textColor="@color/textPrimary"
+                android:textColor="@color/colorOnSurface"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:fontFamily="serif"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -137,9 +140,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Información Adicional"
-                android:textColor="@color/textPrimary"
+                android:textColor="@color/colorOnSurface"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:fontFamily="serif"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -166,8 +170,8 @@
         android:textColor="@color/white"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        app:cornerRadius="12dp"
-        app:backgroundTint="@color/colorAccent"
+        app:cornerRadius="24dp"
+        app:backgroundTint="@color/colorSecondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

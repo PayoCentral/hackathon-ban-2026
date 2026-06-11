@@ -8,54 +8,111 @@
     android:background="@color/backgroundColor"
     tools:context=".ComunidadFragment">
 
-    <!-- Header layout -->
-    <LinearLayout
-        android:id="@+id/ll_header"
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp"
-        android:background="@color/surfaceColor"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/feed_title"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/feed_subtitle"
-            android:textColor="@color/textSecondary"
-            android:textSize="14sp" />
-    </LinearLayout>
+            <!-- Header Layout -->
+            <LinearLayout
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@color/surfaceColor">
 
-    <!-- Divider -->
-    <View
-        android:id="@+id/header_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/dividerColor"
-        app:layout_constraintTop_toBottomOf="@id/ll_header" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feed_title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif" />
 
-    <!-- RecyclerView for Feed -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_feed"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/header_divider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/feed_subtitle"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/dividerColor" />
+
+            <!-- Carousel Section: Próximos Eventos -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Próximos eventos"
+                android:textColor="@color/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:clipToPadding="false"
+                android:layout_marginBottom="8dp"
+                tools:listitem="@layout/item_event_carousel" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/dividerColor" />
+
+            <!-- Vertical Feed Section: Noticias y Avisos -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Noticias y avisos"
+                android:textColor="@color/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_feed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_news" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- Progress Indicator -->
     <ProgressBar

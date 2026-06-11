@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:indeterminate="true"
-        android:progressTint="@color/colorAccent"
+        android:progressTint="@color/colorSecondary"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

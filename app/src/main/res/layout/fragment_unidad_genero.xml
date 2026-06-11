@@ -27,14 +27,15 @@
                 android:orientation="vertical"
                 android:layout_marginBottom="20dp">
 
-                <!-- Title -->
+                <!-- Title (Serif) -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/genero_title"
                     android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="serif" />
 
                 <!-- Subtitle -->
                 <TextView
@@ -43,7 +44,8 @@
                     android:layout_marginTop="4dp"
                     android:text="@string/genero_subtitle"
                     android:textColor="@color/textSecondary"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif" />
 
                 <!-- System Status Indicator Card (Visibility of System Status) -->
                 <com.google.android.material.card.MaterialCardView
@@ -78,7 +80,8 @@
                             android:text="Servicio Operando - Disponible"
                             android:textColor="@color/statusActiva"
                             android:textSize="11sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -89,8 +92,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <LinearLayout
@@ -122,15 +127,17 @@
                             android:text="@string/label_responsable"
                             android:textColor="@color/textSecondary"
                             android:textSize="12sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/value_responsable"
-                            android:textColor="@color/textPrimary"
+                            android:textColor="@color/colorOnSurface"
                             android:textSize="16sp"
                             android:textStyle="bold"
+                            android:fontFamily="sans-serif"
                             android:layout_marginTop="2dp"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -141,8 +148,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <LinearLayout
@@ -174,14 +183,16 @@
                             android:text="@string/label_horarios"
                             android:textColor="@color/textSecondary"
                             android:textSize="12sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/value_horarios"
-                            android:textColor="@color/textPrimary"
+                            android:textColor="@color/colorOnSurface"
                             android:textSize="15sp"
+                            android:fontFamily="sans-serif"
                             android:layout_marginTop="2dp"
                             android:lineSpacingMultiplier="1.1"/>
                     </LinearLayout>
@@ -193,8 +204,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <LinearLayout
@@ -226,14 +239,16 @@
                             android:text="@string/label_ubicacion"
                             android:textColor="@color/textSecondary"
                             android:textSize="12sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/value_ubicacion"
-                            android:textColor="@color/textPrimary"
+                            android:textColor="@color/colorOnSurface"
                             android:textSize="15sp"
+                            android:fontFamily="sans-serif"
                             android:layout_marginTop="2dp"
                             android:lineSpacingMultiplier="1.1"/>
                     </LinearLayout>
@@ -245,8 +260,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <LinearLayout
@@ -278,14 +295,16 @@
                             android:text="@string/label_contacto"
                             android:textColor="@color/textSecondary"
                             android:textSize="12sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/value_contacto"
-                            android:textColor="@color/textPrimary"
+                            android:textColor="@color/colorOnSurface"
                             android:textSize="15sp"
+                            android:fontFamily="sans-serif"
                             android:layout_marginTop="2dp"
                             android:lineSpacingMultiplier="1.1"/>
                     </LinearLayout>

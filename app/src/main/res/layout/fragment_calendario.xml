@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Back navigation button -->
+            <!-- Back navigation button (Sans-serif) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cal_back"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -30,11 +30,12 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:fontFamily="sans-serif"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:layout_marginBottom="16dp"/>
 
-            <!-- Header -->
+            <!-- Header (Serif) -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold"
+                android:fontFamily="serif"
                 android:layout_marginBottom="16dp"/>
 
             <!-- Calendar Card -->
@@ -49,8 +51,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
                 app:cardBackgroundColor="@color/surfaceColor">
 
                 <CalendarView
@@ -59,30 +63,35 @@
                     android:layout_height="wrap_content" />
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Event Details Info Card -->
+            <!-- Event Details Info Card (Pseudo-Glass / Floating Modal Style) -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@color/surfaceColor">
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#1A031C36"
+                app:cardBackgroundColor="@color/colorPseudoGlass">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
+                    <!-- Title (Serif) -->
                     <TextView
                         android:id="@+id/tv_event_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Fecha Seleccionada"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorOnSurface"
                         android:textSize="16sp"
                         android:textStyle="bold"
+                        android:fontFamily="serif"
                         android:layout_marginBottom="8dp"/>
 
+                    <!-- Description (Sans-serif) -->
                     <TextView
                         android:id="@+id/tv_event_desc"
                         android:layout_width="match_parent"
@@ -90,6 +99,7 @@
                         android:text="Selecciona un día en el calendario para ver los eventos programados de la facultad."
                         android:textColor="@color/textSecondary"
                         android:textSize="14sp"
+                        android:fontFamily="sans-serif"
                         android:lineSpacingMultiplier="1.2"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

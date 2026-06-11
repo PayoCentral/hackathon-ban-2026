@@ -32,7 +32,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         holder.binding.tvCategory.setText(item.getCategory().toUpperCase());
 
         // Dynamic branding color by category for a rich visual design
-        int colorAccent = holder.itemView.getContext().getResources().getColor(R.color.colorAccent);
+        int colorAccent = holder.itemView.getContext().getResources().getColor(R.color.colorSecondary);
         int colorPrimary = holder.itemView.getContext().getResources().getColor(R.color.colorPrimary);
         int colorTeal = 0xFF00796B; // General info
 

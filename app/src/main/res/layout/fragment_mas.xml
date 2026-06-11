@@ -1,104 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/backgroundColor"
-    android:padding="20dp"
     tools:context=".MasFragment">
 
-    <!-- Header Title -->
-    <TextView
+    <!-- Scroll container -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/mas_title"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Card: Calendario Universitario -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_calendario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="3dp"
-        app:cardBackgroundColor="@color/surfaceColor">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/bg_status_chip"
-                android:backgroundTint="#ECEFF1"
-                android:padding="12dp"
-                android:src="@drawable/ic_calendar"
-                app:tint="@color/colorAccent" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calendario_titulo"
-                    android:textColor="@color/textPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/calendario_descripcion"
-                    android:textColor="@color/textSecondary"
-                    android:textSize="12sp"
-                    android:lineSpacingMultiplier="1.1" />
-            </LinearLayout>
-
+            <!-- Header Title (Serif) -->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="→"
-                android:textColor="@color/textSecondary"
-                android:textSize="20sp"
-                android:layout_marginStart="8dp" />
+                android:text="@string/mas_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Option 1: Perfil (Flat Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#ECEFF1"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_person"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Perfil de Usuario"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Option 2: Calendario (Flat Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_calendario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#ECEFF1"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/colorSecondary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Calendario Universitario"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Option 3: Mapa del Campus (Flat Card - Pronto) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_mapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#ECEFF1"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_map"
+                        app:tint="@color/colorTertiary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Mapa del Campus"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+
+                    <!-- Pronto Tag -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pronto"
+                        android:textColor="@color/colorSecondary"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#FCE4EC"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Option 4: Ajustes (Flat Card - Pronto) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_ajustes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#ECEFF1"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_settings"
+                        app:tint="@color/textSecondary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="Ajustes de la App"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+
+                    <!-- Pronto Tag -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pronto"
+                        android:textColor="@color/colorSecondary"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#FCE4EC"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Option 5: Cerrar Sesión (Flat Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFCDD2"
+                app:cardBackgroundColor="#FFEBEE">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="#FFCDD2"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_comunidad"
+                        app:tint="#D32F2F" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Cerrar sesión"
+                        android:textColor="#D32F2F"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
 
-    <!-- Spacer to push the logout button to the bottom -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <!-- Cerrar Sesión Button for user control & freedom -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_logout"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Cerrar Sesión"
-        android:textColor="@color/colorAccent"
-        app:strokeColor="@color/colorAccent"
-        app:cornerRadius="10dp"
-        android:layout_marginBottom="16dp" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -25,6 +26,14 @@ public class MasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Perfil option click listener
+        binding.cvPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Perfil de usuario: admin (Invitado)", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Click listener for University Calendar option card
         binding.cvCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +47,24 @@ public class MasFragment extends Fragment {
             }
         });
 
+        // Campus Map option click listener (Soon)
+        binding.cvMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "El Mapa del campus estará disponible próximamente.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Settings option click listener (Soon)
+        binding.cvAjustes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Los Ajustes de la aplicación estarán disponibles pronto.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Logout action button listener (User Control & Freedom)
-        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
+        binding.cvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Navigate back to LoginActivity and clear task stack
