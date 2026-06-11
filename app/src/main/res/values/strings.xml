@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">ARPAvisos</string>
+    
+    <!-- Navigation Titles -->
+    <string name="title_comunidad">Comunidad</string>
+    <string name="title_galeria">Galería</string>
+    <string name="title_clubs">Clubs</string>
+    <string name="title_genero">Unidad de Género</string>
+    <string name="title_mas">Más</string>
+    
+    <!-- Login Screen -->
+    <string name="login_title">ARPA Facultad de Artes</string>
+    <string name="login_subtitle">Bienvenido al Portal Oficial de la Comunidad ARPA</string>
+    <string name="hint_username">Usuario o Correo Institucional</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="error_invalid_credentials">Usuario o contraseña incorrectos. Pruebe con admin / 1234</string>
+    <string name="error_empty_fields">Por favor complete todos los campos</string>
+    
+    <!-- Clubs Screen -->
+    <string name="club_detail_title">Detalle del Club</string>
+    <string name="btn_inscribirse">Inscribirse al Club</string>
+    <string name="registration_success">¡Te has inscrito con éxito a este club!</string>
+    <string name="label_status">Estado:</string>
+    
+    <!-- Unidad de Genero Screen -->
+    <string name="genero_title">Unidad de Género ARPA</string>
+    <string name="genero_subtitle">Comprometidos con un entorno universitario seguro, inclusivo, equitativo y libre de violencia.</string>
+    
+    <string name="label_responsable">Responsable de la Unidad</string>
+    <string name="value_responsable">Dra. Gabriela Maldonado Ortiz</string>
+    
+    <string name="label_horarios">Horarios de Atención</string>
+    <string name="value_horarios">Lunes a Viernes\n09:00 AM - 05:00 PM</string>
+    
+    <string name="label_ubicacion">Ubicación Física</string>
+    <string name="value_ubicacion">Edificio ARPA 1, Planta Baja\nCubículo 102 - Junto a la Biblioteca</string>
+    
+    <string name="label_contacto">Contacto Directo</string>
+    <string name="value_contacto">correo: unidad.genero@arpa.edu.mx\nTel: (222) 229-5500 ext. 7890</string>
+    
+    <!-- Mas Screen -->
+    <string name="mas_title">Más Herramientas</string>
+    <string name="calendario_titulo">Calendario Universitario</string>
+    <string name="calendario_descripcion">Consulta el periodo escolar, suspensiones oficiales y fechas límite de trámites de la facultad.</string>
+    <string name="calendario_vista_title">Calendario de Actividades</string>
+    
+    <!-- Comunidad / Feed Screen -->
+    <string name="feed_title">Comunidad ARPA</string>
+    <string name="feed_subtitle">Noticias, convocatorias y eventos artísticos de nuestra facultad.</string>
 </resources>
