@@ -1,0 +1,25 @@
+# Tareas de Refactorización Mayor - Galería Nativa e Interacciones
+
+- [x] Recursos y Drawables
+  - [x] Crear vector drawable `ic_heart_outline.xml`
+  - [x] Crear vector drawable `ic_heart_filled.xml`
+  - [x] Crear vector drawable `ic_comment.xml`
+  - [x] Crear vector drawable `ic_share.xml`
+  - [x] Añadir estilo `CircleImageStyle` en `themes.xml`
+- [x] Refactorización de la Galería (Instagram-like)
+  - [x] Modificar `fragment_galeria.xml` para remover el WebView y agregar NestedScrollView con `rv_gallery_feed`
+  - [x] Crear `item_gallery_post.xml` con ShapeableImageView circular, ImageView de obra y fila de iconos
+  - [x] Crear `PostItem.java` para representar los datos de publicaciones
+  - [x] Crear `GalleryAdapter.java` para inflar posts y manejar los me gustas de forma interactiva
+  - [x] Sobrescribir `GaleriaFragment.java` para configurar el RecyclerView e inyectar 4 posts de prueba realistas
+- [x] Ajustes Visuales de Login y Navbar
+  - [x] Modificar `activity_main.xml` para fijar `wrap_content` de altura, `8dp` de elevación y `app:labelVisibilityMode="selected"` estricto en la BottomNavigationView
+  - [x] Modificar `activity_login.xml` para aplicar el color de fondo `#FE94CE`
+- [x] Expansión de Noticias a Detalle
+  - [x] Crear `fragment_news_detail.xml` con NestedScrollView, cabecera redondeada de imagen de evento, título Serif, fecha, chip de categoría y botón volver
+  - [x] Crear `NewsDetailFragment.java` para capturar argumentos y gestionar el retorno
+  - [x] Modificar `NewsAdapter.java` para añadir callback interface `OnNewsClickListener` y manejar clicks en itemView
+  - [x] Modificar `ComunidadFragment.java` para recibir el evento de click y navegar a `NewsDetailFragment`
+- [x] Verificación y Compilación
+  - [x] Ejecutar compilación Gradle para asegurar que todo compile sin errores de recursos
+  - [x] Actualizar `walkthrough.md`

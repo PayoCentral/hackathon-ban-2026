@@ -1,6 +1,7 @@
 package com.buap.arpavisos;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,10 +10,16 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
-    private final List<NewsItem> newsList;
+    public interface OnNewsClickListener {
+        void onNewsClick(NewsItem newsItem);
+    }
 
-    public NewsAdapter(List<NewsItem> newsList) {
+    private final List<NewsItem> newsList;
+    private final OnNewsClickListener clickListener;
+
+    public NewsAdapter(List<NewsItem> newsList, OnNewsClickListener clickListener) {
         this.newsList = newsList;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -46,6 +53,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             holder.binding.tvCategory.setTextColor(colorTeal);
             holder.binding.viewAccent.setBackgroundColor(colorTeal);
         }
+
+        // Set click listener on the entire card item container (itemView)
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (clickListener != null) {
+                    clickListener.onNewsClick(item);
+                }
+            }
+        });
     }
 
     @Override

@@ -88,7 +88,26 @@ public class ComunidadFragment extends Fragment {
                         "Noticia"
                 ));
 
-                NewsAdapter newsAdapter = new NewsAdapter(news);
+                // Bind adapter with click callback for navigation expansion
+                NewsAdapter newsAdapter = new NewsAdapter(news, new NewsAdapter.OnNewsClickListener() {
+                    @Override
+                    public void onNewsClick(NewsItem newsItem) {
+                        Bundle args = new Bundle();
+                        args.putString("title", newsItem.getTitle());
+                        args.putString("date", newsItem.getDate());
+                        args.putString("desc", newsItem.getDesc());
+                        args.putString("category", newsItem.getCategory());
+
+                        NewsDetailFragment detailFragment = new NewsDetailFragment();
+                        detailFragment.setArguments(args);
+
+                        getParentFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, detailFragment)
+                                .addToBackStack(null) // Enables user navigation freedom to return
+                                .commit();
+                    }
+                });
                 binding.rvFeed.setAdapter(newsAdapter);
 
                 // Hide progress, show scroll

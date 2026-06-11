@@ -20,4 +20,17 @@
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <!-- Circular avatar styling for ShapeableImageView -->
+    <style name="CircleImageStyle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Rounded bottom corners styling for ShapeableImageView -->
+    <style name="RoundedBottomCornersImageStyle">
+        <item name="cornerSizeBottomLeft">24dp</item>
+        <item name="cornerSizeBottomRight">24dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
 </resources>
