@@ -1,22 +1,17 @@
 package com.buap.arpavisos;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.buap.arpavisos.databinding.ActivityMainBinding;
-import com.nafis.bottomnavigation.NafisBottomNavigation;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
-    private static final int ID_GALLERY = 1;
-    private static final int ID_CLUBS = 2;
-    private static final int ID_COMMUNITY = 3;
-    private static final int ID_GENDER = 4;
-    private static final int ID_MORE = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,49 +20,55 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Configure Nafis Bottom Navigation items in strict order
-        binding.bottomNavigation.add(new NafisBottomNavigation.Model(ID_GALLERY, R.drawable.ic_galeria));
-        binding.bottomNavigation.add(new NafisBottomNavigation.Model(ID_CLUBS, R.drawable.ic_clubs));
-        binding.bottomNavigation.add(new NafisBottomNavigation.Model(ID_COMMUNITY, R.drawable.ic_comunidad));
-        binding.bottomNavigation.add(new NafisBottomNavigation.Model(ID_GENDER, R.drawable.ic_genero));
-        binding.bottomNavigation.add(new NafisBottomNavigation.Model(ID_MORE, R.drawable.ic_mas));
-
-        // Click listener for Nafis Bottom Navigation item clicks
-        binding.bottomNavigation.setOnClickMenuListener(new Function1<NafisBottomNavigation.Model, Unit>() {
+        // Handle Floating Action Button click (Comunidad/Home screen)
+        binding.fabComunidad.setOnClickListener(new View.OnClickListener() {
             @Override
-            public Unit invoke(NafisBottomNavigation.Model item) {
-                // Click registered
-                return Unit.INSTANCE;
+            public void onClick(View v) {
+                loadFragment(new ComunidadFragment());
+                // Uncheck all items in BottomNavigationView to visually highlight the active FAB
+                uncheckAllNavigationItems();
             }
         });
 
-        // Show listener to load and swap the fragments when the section is shown/animated
-        binding.bottomNavigation.setOnShowListener(new Function1<NafisBottomNavigation.Model, Unit>() {
+        // Handle BottomNavigationView item selection
+        binding.bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public Unit invoke(NafisBottomNavigation.Model item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
-                int itemId = item.getId();
+                int itemId = item.getItemId();
 
-                if (itemId == ID_GALLERY) {
+                if (itemId == R.id.nav_galeria) {
                     selectedFragment = new GaleriaFragment();
-                } else if (itemId == ID_CLUBS) {
+                } else if (itemId == R.id.nav_clubs) {
                     selectedFragment = new ClubsFragment();
-                } else if (itemId == ID_COMMUNITY) {
-                    selectedFragment = new ComunidadFragment();
-                } else if (itemId == ID_GENDER) {
+                } else if (itemId == R.id.nav_genero) {
                     selectedFragment = new UnidadGeneroFragment();
-                } else if (itemId == ID_MORE) {
+                } else if (itemId == R.id.nav_mas) {
                     selectedFragment = new MasFragment();
                 }
 
-                loadFragment(selectedFragment);
-                return Unit.INSTANCE;
+                if (selectedFragment != null) {
+                    loadFragment(selectedFragment);
+                    return true;
+                }
+                return false;
             }
         });
 
-        // Select the default section (Comunidad) on first start
+        // Set default home screen (Comunidad) on fresh launch
         if (savedInstanceState == null) {
-            binding.bottomNavigation.show(ID_COMMUNITY, true);
+            loadFragment(new ComunidadFragment());
+            uncheckAllNavigationItems();
+        }
+    }
+
+    /**
+     * Unchecks all items in the BottomNavigationView menu.
+     */
+    private void uncheckAllNavigationItems() {
+        int size = binding.bottomNavigation.getMenu().size();
+        for (int i = 0; i < size; i++) {
+            binding.bottomNavigation.getMenu().getItem(i).setChecked(false);
         }
     }
 

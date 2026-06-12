@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_comunidad"
-        android:icon="@drawable/ic_comunidad"
-        android:title="@string/title_comunidad" />
-    
-    <item
         android:id="@+id/nav_galeria"
         android:icon="@drawable/ic_galeria"
         android:title="@string/title_galeria" />
@@ -14,6 +9,12 @@
         android:id="@+id/nav_clubs"
         android:icon="@drawable/ic_clubs"
         android:title="@string/title_clubs" />
+    
+    <!-- Dummy placeholder to leave space for the centered Floating Action Button -->
+    <item
+        android:id="@+id/nav_placeholder"
+        android:title=""
+        android:enabled="false" />
     
     <item
         android:id="@+id/nav_genero"
