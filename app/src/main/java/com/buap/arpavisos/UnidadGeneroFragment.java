@@ -28,8 +28,7 @@ public class UnidadGeneroFragment extends Fragment {
         binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
         binding.customHeader.tvHeaderSubtitle.setText(
                 "Comprometidos con un entorno universitario seguro, inclusivo, equitativo y libre de violencia.");
-        // This is a static screen layout completely styled and constructed in XML
-        // resources.
+
     }
 
     @Override

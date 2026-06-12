@@ -16,37 +16,21 @@
         android:paddingBottom="80dp"
         android:clipToPadding="false" />
 
-    <!-- Bottom App Bar containing transparent Bottom Navigation View -->
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar"
+    <!-- Standard flat BottomNavigationView -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabAlignmentMode="center"
-        app:fabCradleMargin="2dp"
-        app:fabCradleRoundedCornerRadius="16dp"
-        app:backgroundTint="@color/surfaceColor">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:elevation="0dp"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="labeled" />
-
-    </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <!-- Centered Floating Action Button for Comunidad (Home) -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_comunidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="Comunidad"
-        app:srcCompat="@drawable/ic_comunidad"
-        app:backgroundTint="@color/colorSecondary"
-        app:tint="@color/white"
-        app:layout_anchor="@id/bottom_app_bar" />
+        android:background="@color/surfaceColor"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/nav_item_colors"
+        app:itemTextColor="@color/nav_item_colors"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="24dp"
+        app:itemActiveIndicatorStyle="@null"
+        app:itemTextAppearanceInactive="@style/NavInactiveText"
+        app:itemTextAppearanceActive="@style/NavActiveText" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

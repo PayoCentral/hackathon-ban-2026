@@ -27,6 +27,9 @@ public class CalendarioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.customHeader.tvHeaderTitle.setText("Calendario ");
+        binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
+        binding.customHeader.tvHeaderSubtitle
+                .setText("Consulta las fechas más relevantes del periodo escolar.");
 
         // Back button navigation (User control & freedom)
         binding.btnCalBack.setOnClickListener(new View.OnClickListener() {

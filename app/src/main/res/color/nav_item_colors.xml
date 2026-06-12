@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected state -> Morado Profundo #6A4C93 -->
+    <item android:state_checked="true" android:color="#6A4C93" />
+    <!-- Default state -> Translucent Dark Blue #99031C36 -->
+    <item android:color="#99031C36" />
+</selector>
