@@ -17,34 +17,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <!-- Back navigation button (Sans-serif) -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_cal_back"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="← Volver a Más"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Header (Serif) -->
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/calendario_vista_title"
-                android:textColor="@color/colorPrimary"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:fontFamily="serif"
-                android:layout_marginBottom="16dp"/>
+                android:background="@drawable/bg_header_community"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <include
+                    android:id="@+id/customHeader"
+                    layout="@layout/view_common_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Back navigation button (Sans-serif) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cal_back"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="← Volver a Más"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_marginBottom="16dp"/>
 
             <!-- Calendar Card -->
             <com.google.android.material.card.MaterialCardView
@@ -104,6 +113,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+        </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

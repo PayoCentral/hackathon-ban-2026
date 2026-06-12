@@ -20,7 +20,8 @@ public class ComunidadFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentComunidadBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -28,6 +29,10 @@ public class ComunidadFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.customHeader.tvHeaderTitle.setText("Comunidad ARPA");
+        binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
+        binding.customHeader.tvHeaderSubtitle
+                .setText("Noticias, convocatorias y eventos artísticos de nuestra facultad.");
 
         // Setup LayoutManagers (rvEvents is horizontal, rvFeed is vertical)
         binding.rvEvents.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -41,7 +46,8 @@ public class ComunidadFragment extends Fragment {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (binding == null) return;
+                if (binding == null)
+                    return;
 
                 // 1. Featured Events Carousel Data
                 List<NewsItem> events = new ArrayList<>();
@@ -49,20 +55,17 @@ public class ComunidadFragment extends Fragment {
                         "Muestra de Fin de Semestre",
                         "Domingo 14 de Junio, 2026",
                         "Lugar: Explanada de la Facultad (10:00 - 18:00 hrs)",
-                        "Destacado"
-                ));
+                        "Destacado"));
                 events.add(new NewsItem(
                         "Clase Magistral: Grabado",
                         "Jueves 18 de Junio, 2026",
                         "Lugar: Taller de Estampado (11:00 hrs)",
-                        "Talleres"
-                ));
+                        "Talleres"));
                 events.add(new NewsItem(
                         "Festival Cortos ARPA",
                         "Lunes 22 de Junio, 2026",
                         "Lugar: Auditorio Principal (16:00 hrs)",
-                        "Cine"
-                ));
+                        "Cine"));
 
                 EventCarouselAdapter carouselAdapter = new EventCarouselAdapter(events);
                 binding.rvEvents.setAdapter(carouselAdapter);
@@ -73,20 +76,17 @@ public class ComunidadFragment extends Fragment {
                         "Convocatoria: Residencia Artística",
                         "Publicado: 10 de Junio, 2026",
                         "Oportunidad de realizar una estancia de creación artística en el extranjero. Consulta las bases en Secretaría de Extensión Cultural.",
-                        "Convocatoria"
-                ));
+                        "Convocatoria"));
                 news.add(new NewsItem(
                         "Exposición Colectiva 'Luz y Sombra'",
                         "Publicado: 08 de Junio, 2026",
                         "Inauguración de la galería con proyectos destacados de fin de curso de la Licenciatura en Artes Visuales.",
-                        "Evento"
-                ));
+                        "Evento"));
                 news.add(new NewsItem(
                         "Reinscripciones Periodo Otoño 2026",
                         "Publicado: 05 de Junio, 2026",
                         "Se han publicado las guías de materias y horarios autorizados para las inscripciones correspondientes al ciclo Otoño 2026.",
-                        "Noticia"
-                ));
+                        "Noticia"));
 
                 // Bind adapter with click callback for navigation expansion
                 NewsAdapter newsAdapter = new NewsAdapter(news, new NewsAdapter.OnNewsClickListener() {

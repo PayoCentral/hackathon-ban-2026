@@ -19,6 +19,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header_community"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <include
+                    android:id="@+id/customHeader"
+                    layout="@layout/view_common_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
             <!-- Back Button and Image Container -->
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -72,18 +87,7 @@
                     android:background="@drawable/bg_status_chip"
                     android:backgroundTint="#FCE4EC" />
 
-                <!-- Title (Serif) -->
-                <TextView
-                    android:id="@+id/tv_news_detail_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Título de la Noticia"
-                    android:textColor="@color/colorOnSurface"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:fontFamily="serif"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="6dp" />
+
 
                 <!-- Date (Sans-serif) -->
                 <TextView

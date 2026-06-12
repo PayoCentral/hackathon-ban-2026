@@ -15,7 +15,8 @@ public class UnidadGeneroFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentUnidadGeneroBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -23,7 +24,12 @@ public class UnidadGeneroFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // This is a static screen layout completely styled and constructed in XML resources.
+        binding.customHeader.tvHeaderTitle.setText("Unidad de Género ARPA");
+        binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
+        binding.customHeader.tvHeaderSubtitle.setText(
+                "Comprometidos con un entorno universitario seguro, inclusivo, equitativo y libre de violencia.");
+        // This is a static screen layout completely styled and constructed in XML
+        // resources.
     }
 
     @Override

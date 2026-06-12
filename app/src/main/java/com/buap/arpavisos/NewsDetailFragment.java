@@ -36,7 +36,7 @@ public class NewsDetailFragment extends Fragment {
             String desc = args.getString("desc", "");
             String category = args.getString("category", "Noticia");
 
-            binding.tvNewsDetailTitle.setText(title);
+            binding.customHeader.tvHeaderTitle.setText(title);
             binding.tvNewsDetailDate.setText(date);
             binding.tvNewsDetailDesc.setText(desc);
             binding.tvNewsDetailCategory.setText(category.toUpperCase());

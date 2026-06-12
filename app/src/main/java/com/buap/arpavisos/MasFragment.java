@@ -17,7 +17,8 @@ public class MasFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentMasBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -25,6 +26,7 @@ public class MasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.customHeader.tvHeaderTitle.setText("Más herramientas.");
 
         // Perfil option click listener
         binding.cvPerfil.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +40,8 @@ public class MasFragment extends Fragment {
         binding.cvCalendario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Replace fragment with CalendarioFragment, adding to backstack for navigation freedom
+                // Replace fragment with CalendarioFragment, adding to backstack for navigation
+                // freedom
                 getParentFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, new CalendarioFragment())
@@ -51,7 +54,8 @@ public class MasFragment extends Fragment {
         binding.cvMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "El Mapa del campus estará disponible próximamente.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "El Mapa del campus estará disponible próximamente.", Toast.LENGTH_SHORT)
+                        .show();
             }
         });
 
@@ -59,7 +63,8 @@ public class MasFragment extends Fragment {
         binding.cvAjustes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Los Ajustes de la aplicación estarán disponibles pronto.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Los Ajustes de la aplicación estarán disponibles pronto.",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 

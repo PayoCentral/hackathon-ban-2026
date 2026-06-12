@@ -23,33 +23,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Header Layout -->
-            <LinearLayout
-                android:id="@+id/ll_header"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:background="@drawable/bg_header_community">
+                android:background="@drawable/bg_header_community"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
+                <include
+                    android:id="@+id/customHeader"
+                    layout="@layout/view_common_header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/feed_title"
-                    android:textColor="@android:color/white"
-                    android:textSize="26sp"
-                    android:textStyle="bold"
-                    android:fontFamily="serif" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/feed_subtitle"
-                    android:textColor="#E6ECF4"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif" />
-            </LinearLayout>
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
 
             <View
                 android:layout_width="match_parent"

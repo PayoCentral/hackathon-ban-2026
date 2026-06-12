@@ -18,7 +18,8 @@ public class ClubsFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentClubsBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -26,6 +27,10 @@ public class ClubsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.customHeader.tvHeaderTitle.setText("Clubs");
+        binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
+        binding.customHeader.tvHeaderSubtitle
+                .setText("Inscríbete a los talleres, colectivos y agrupaciones de la facultad.");
 
         // Setup LayoutManager
         binding.rvClubs.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -37,29 +42,25 @@ public class ClubsFragment extends Fragment {
                 "Artes Plásticas • Coord. Andrei Carro",
                 "En curso",
                 "Taller enfocado en explorar técnicas de impresión no convencionales, uso de tintas alternativas y soportes experimentales.",
-                "Martes y Jueves de 04:00 PM a 06:00 PM"
-        ));
+                "Martes y Jueves de 04:00 PM a 06:00 PM"));
         clubs.add(new ClubItem(
                 "Taller de Pintura Óleo",
                 "Artes Plásticas • Sábados 10:00 hrs",
                 "Activa",
                 "Aprende las técnicas tradicionales del óleo, mezcla de pigmentos y teoría del color. Dirigido a principiantes e intermedios.",
-                "Sábados de 10:00 AM a 01:00 PM"
-        ));
+                "Sábados de 10:00 AM a 01:00 PM"));
         clubs.add(new ClubItem(
                 "Colectivo de Fotografía Urbana",
                 "Fotografía • Jueves 16:00 hrs",
                 "Activa",
                 "Salidas de campo para capturar la esencia de la arquitectura y vida citadina. Crítica técnica y edición digital en laboratorio.",
-                "Jueves de 04:00 PM a 06:00 PM"
-        ));
+                "Jueves de 04:00 PM a 06:00 PM"));
         clubs.add(new ClubItem(
                 "Taller de Grabado y Xilografía",
                 "Artes Plásticas • Martes 11:00 hrs",
                 "Pasada",
                 "Introducción al linóleo y xilografía en madera. Uso de gubias y prensa calcográfica. Ciclo Primavera finalizado.",
-                "Martes de 11:00 AM a 01:00 PM"
-        ));
+                "Martes de 11:00 AM a 01:00 PM"));
 
         // Bind adapter
         ClubsAdapter adapter = new ClubsAdapter(clubs, new ClubsAdapter.OnClubClickListener() {

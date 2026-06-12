@@ -37,7 +37,7 @@ public class ClubDetailFragment extends Fragment {
             String desc = args.getString("desc", "");
             String schedule = args.getString("schedule", "");
 
-            binding.tvDetailTitle.setText(title);
+            binding.customHeader.tvHeaderTitle.setText(title);
             binding.tvDetailCategory.setText(category);
             binding.tvDetailStatus.setText(status);
             binding.tvDetailDesc.setText(desc);

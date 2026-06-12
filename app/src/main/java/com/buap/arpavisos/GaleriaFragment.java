@@ -18,7 +18,8 @@ public class GaleriaFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
         binding = FragmentGaleriaBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -26,8 +27,11 @@ public class GaleriaFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.customHeader.tvHeaderTitle.setText("Galería ARPA");
+        binding.customHeader.tvHeaderSubtitle.setVisibility(View.VISIBLE);
+        binding.customHeader.tvHeaderSubtitle
+                .setText("Explora y comparte las creaciones artísticas y exposiciones estudiantiles de la comunidad. ");
 
-        // Setup LayoutManager (vertical scrolling list)
         binding.rvGalleryFeed.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Populate mock social media posts (at least 4 realistic art posts)
@@ -39,8 +43,7 @@ public class GaleriaFragment extends Fragment {
                 false,
                 "Hace 2 horas",
                 R.drawable.ic_person,
-                R.drawable.art_still_life
-        ));
+                R.drawable.art_still_life));
         posts.add(new PostItem(
                 "Gráfica ARPA",
                 "Grabado Experimental - Composición abstracta en xilografía y prensa calcográfica.",
@@ -48,8 +51,7 @@ public class GaleriaFragment extends Fragment {
                 true,
                 "Hace 5 horas",
                 R.drawable.ic_person,
-                R.drawable.art_woodcut
-        ));
+                R.drawable.art_woodcut));
         posts.add(new PostItem(
                 "Colectivo Audiovisual",
                 "Diseño de paletas cromáticas inspiradas en nuestra facultad ARPA.",
@@ -57,8 +59,7 @@ public class GaleriaFragment extends Fragment {
                 false,
                 "Ayer",
                 R.drawable.ic_person,
-                R.drawable.logo_facultad
-        ));
+                R.drawable.logo_facultad));
         posts.add(new PostItem(
                 "Escultura ARPA 1",
                 "Composición volumétrica de naturaleza abstracta.",
@@ -66,8 +67,7 @@ public class GaleriaFragment extends Fragment {
                 false,
                 "Hace 3 días",
                 R.drawable.ic_person,
-                R.drawable.art_still_life
-        ));
+                R.drawable.art_still_life));
 
         // Setup Adapter
         GalleryAdapter adapter = new GalleryAdapter(posts);
