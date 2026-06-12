@@ -8,55 +8,53 @@
     android:background="@color/backgroundColor"
     tools:context=".ClubDetailFragment">
 
-    <!-- Scrollable Content -->
+    <!-- Header Fijo (Anclado al tope) -->
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_community"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+            android:id="@+id/customHeader"
+            layout="@layout/view_common_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <!-- Scroll Central (Constreñido entre cabecera y botón) -->
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/detailScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_inscribirse"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintBottom_toTopOf="@id/btnContainer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:fillViewport="true">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <!-- Back navigation button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_header_community"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <include
-                    android:id="@+id/customHeader"
-                    layout="@layout/view_common_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <!-- Back navigation button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_back"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="← Volver a la Lista"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:layout_marginBottom="16dp"/>
+                android:text="← Volver a la Lista"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:layout_marginBottom="16dp"/>
 
             <!-- Category & Details Card -->
             <com.google.android.material.card.MaterialCardView
@@ -175,25 +173,31 @@
                 android:layout_marginBottom="32dp"/>
 
         </LinearLayout>
-        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- CALL TO ACTION: Large centered button at the bottom -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_inscribirse"
+    <!-- Botón Fijo (Anclado al fondo) -->
+    <LinearLayout
+        android:id="@+id/btnContainer"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_margin="16dp"
-        android:text="@string/btn_inscribirse"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="24dp"
-        app:backgroundTint="@color/colorSecondary"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_inscribirse"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:text="@string/btn_inscribirse"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="24dp"
+            app:backgroundTint="@color/colorSecondary" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

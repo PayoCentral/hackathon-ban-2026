@@ -70,7 +70,25 @@ public class ComunidadFragment extends Fragment {
                         "Cine",
                         R.drawable.event_cine));
 
-                EventCarouselAdapter carouselAdapter = new EventCarouselAdapter(events);
+                EventCarouselAdapter carouselAdapter = new EventCarouselAdapter(events, new EventCarouselAdapter.OnEventClickListener() {
+                    @Override
+                    public void onEventClick(NewsItem eventItem) {
+                        Bundle args = new Bundle();
+                        args.putString("title", eventItem.getTitle());
+                        args.putString("date", eventItem.getDate());
+                        args.putString("desc", eventItem.getDesc());
+                        args.putString("category", eventItem.getCategory());
+
+                        NewsDetailFragment detailFragment = new NewsDetailFragment();
+                        detailFragment.setArguments(args);
+
+                        getParentFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, detailFragment)
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                });
                 binding.rvEvents.setAdapter(carouselAdapter);
 
                 // 2. News and Announcements Data

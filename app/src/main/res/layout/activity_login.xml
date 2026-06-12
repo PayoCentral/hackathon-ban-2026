@@ -31,15 +31,14 @@
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_marginBottom="24dp"
-                android:contentDescription="@string/login_title"
-                app:srcCompat="@drawable/logo_facultad"
-                app:tint="@android:color/white" />
+                android:contentDescription="arpAPP Logo"
+                app:srcCompat="@drawable/ic_arpapp_logo" />
 
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ARPAPP"
+                android:text="arpAPP"
                 android:textColor="@android:color/white"
                 android:textSize="28sp"
                 android:textStyle="bold"

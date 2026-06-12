@@ -9,10 +9,16 @@ import java.util.List;
 
 public class EventCarouselAdapter extends RecyclerView.Adapter<EventCarouselAdapter.ViewHolder> {
 
-    private final List<NewsItem> eventList;
+    public interface OnEventClickListener {
+        void onEventClick(NewsItem event);
+    }
 
-    public EventCarouselAdapter(List<NewsItem> eventList) {
+    private final List<NewsItem> eventList;
+    private final OnEventClickListener clickListener;
+
+    public EventCarouselAdapter(List<NewsItem> eventList, OnEventClickListener clickListener) {
         this.eventList = eventList;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -37,6 +43,13 @@ public class EventCarouselAdapter extends RecyclerView.Adapter<EventCarouselAdap
         } else {
             holder.binding.ivEventImage.setVisibility(android.view.View.GONE);
         }
+
+        // Set click listener on the root item view
+        holder.itemView.setOnClickListener(v -> {
+            if (clickListener != null) {
+                clickListener.onEventClick(item);
+            }
+        });
     }
 
     @Override

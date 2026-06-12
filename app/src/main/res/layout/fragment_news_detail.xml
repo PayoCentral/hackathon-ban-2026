@@ -8,31 +8,37 @@
     android:background="@color/backgroundColor"
     tools:context=".NewsDetailFragment">
 
-    <!-- Scrollable content -->
+    <!-- Header Fijo (Anclado al tope) -->
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_community"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+            android:id="@+id/customHeader"
+            layout="@layout/view_common_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <!-- Scroll Central (Constreñido entre cabecera y fondo) -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_header_community"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <include
-                    android:id="@+id/customHeader"
-                    layout="@layout/view_common_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
 
             <!-- Back Button and Image Container -->
             <RelativeLayout
@@ -86,8 +92,6 @@
                     android:fontFamily="sans-serif"
                     android:background="@drawable/bg_status_chip"
                     android:backgroundTint="#FCE4EC" />
-
-
 
                 <!-- Date (Sans-serif) -->
                 <TextView
