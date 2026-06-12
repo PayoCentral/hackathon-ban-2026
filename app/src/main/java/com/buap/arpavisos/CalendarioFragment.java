@@ -60,16 +60,22 @@ public class CalendarioFragment extends Fragment {
                     if (dayOfMonth == 14) {
                         binding.tvEventDesc.setText(
                                 "• Muestra de Fin de Semestre\nLugar: Explanada de la Facultad\nHora: 10:00 AM - 06:00 PM\nDetalle: Presentación de proyectos y galerías de todas las carreras de la facultad ARPA.");
+                        binding.ivCalEventImage.setImageResource(R.drawable.event_muestra);
+                        binding.ivCalEventImage.setVisibility(View.VISIBLE);
                     } else if (dayOfMonth == 16) {
                         binding.tvEventDesc.setText(
                                 "• Taller de Grabado Experimental\nCoordinador: Andrei Carro\nHora: 04:00 PM - 06:00 PM\nLugar: Taller de Grabado ARPA\nDetalle: Sesión técnica abierta enfocada en explorar técnicas de impresión no convencionales.");
+                        binding.ivCalEventImage.setImageResource(R.drawable.club_grabado);
+                        binding.ivCalEventImage.setVisibility(View.VISIBLE);
                     } else {
                         binding.tvEventDesc
                                 .setText("No hay eventos programados para este día. Disfruta de tu jornada escolar.");
+                        binding.ivCalEventImage.setVisibility(View.GONE);
                     }
                 } else {
                     binding.tvEventDesc
                             .setText("No hay eventos académicos o administrativos registrados en esta fecha.");
+                    binding.ivCalEventImage.setVisibility(View.GONE);
                 }
             }
         });
