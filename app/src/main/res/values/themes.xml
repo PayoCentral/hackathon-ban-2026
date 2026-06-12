@@ -17,7 +17,7 @@
         <item name="android:windowBackground">@color/backgroundColor</item>
         
         <!-- Customize status bar for M3 light styling -->
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
