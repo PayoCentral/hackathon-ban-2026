@@ -31,6 +31,8 @@
         app:itemIconSize="24dp"
         app:itemActiveIndicatorStyle="@null"
         app:itemTextAppearanceInactive="@style/NavInactiveText"
-        app:itemTextAppearanceActive="@style/NavActiveText" />
+        app:itemTextAppearanceActive="@style/NavActiveText"
+        app:itemBackground="@drawable/bg_nav_ripple"
+        app:itemRippleColor="@null" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
