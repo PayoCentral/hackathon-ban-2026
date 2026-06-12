@@ -1,9 +1,13 @@
 package com.buap.arpavisos;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.buap.arpavisos.databinding.ActivityLoginBinding;
@@ -19,6 +23,13 @@ public class LoginActivity extends AppCompatActivity {
         // Setup View Binding
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Apply LinearGradient text color shader
+        TextView tvTitle = findViewById(R.id.tv_login_title);
+        Shader textShader = new LinearGradient(0, 0, 0, tvTitle.getTextSize(),
+                new int[]{Color.WHITE, Color.parseColor("#EA3E99")},
+                new float[]{0, 1}, Shader.TileMode.CLAMP);
+        tvTitle.getPaint().setShader(textShader);
 
         // Login Action listener
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {

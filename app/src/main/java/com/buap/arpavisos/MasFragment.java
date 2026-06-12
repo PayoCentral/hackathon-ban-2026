@@ -32,7 +32,11 @@ public class MasFragment extends Fragment {
         binding.cvPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Perfil de usuario: admin (Invitado)", Toast.LENGTH_SHORT).show();
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new PerfilFragment())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
@@ -50,34 +54,27 @@ public class MasFragment extends Fragment {
             }
         });
 
-        // Campus Map option click listener (Soon)
+        // Campus Map option click listener
         binding.cvMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "El Mapa del campus estará disponible próximamente.", Toast.LENGTH_SHORT)
-                        .show();
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new MapaFragment())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
-        // Settings option click listener (Soon)
+        // Settings option click listener
         binding.cvAjustes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Los Ajustes de la aplicación estarán disponibles pronto.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Logout action button listener (User Control & Freedom)
-        binding.cvLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate back to LoginActivity and clear task stack
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-                if (getActivity() != null) {
-                    getActivity().finish();
-                }
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new AjustesFragment())
+                        .addToBackStack(null)
+                        .commit();
             }
         });
     }

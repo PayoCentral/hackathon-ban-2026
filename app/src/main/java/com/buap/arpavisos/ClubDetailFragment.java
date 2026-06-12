@@ -90,6 +90,18 @@ public class ClubDetailFragment extends Fragment {
                 Toast.makeText(getContext(), getString(R.string.registration_success), Toast.LENGTH_LONG).show();
             }
         });
+
+        // Calendar button click listener
+        binding.btnVerCalendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new CalendarioFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override

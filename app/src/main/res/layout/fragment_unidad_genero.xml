@@ -8,76 +8,76 @@
     android:background="@color/backgroundColor"
     tools:context=".UnidadGeneroFragment">
 
+    <!-- Header Fijo (Anclado al tope) -->
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_gender"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+            android:id="@+id/customHeader"
+            layout="@layout/view_common_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
     <!-- ScrollView wrapping static layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <!-- System Status Indicator Card (Visibility of System Status) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_header_gender"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#C8E6C9"
+                app:cardBackgroundColor="#E8F5E9">
 
-                <include
-                    android:id="@+id/customHeader"
-                    layout="@layout/view_common_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
-
-            <!-- Inner layout wrapping cards for padding -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <!-- System Status Indicator Card (Visibility of System Status) -->
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="1dp"
-                    app:strokeColor="#C8E6C9"
-                    app:cardBackgroundColor="#E8F5E9">
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:gravity="center_vertical">
 
-                    <LinearLayout
+                    <!-- Green dot -->
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/bg_status_chip"
+                        android:backgroundTint="@color/statusActiva"
+                        android:layout_marginEnd="6dp" />
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="6dp"
-                        android:gravity="center_vertical">
-
-                        <!-- Green dot -->
-                        <View
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:background="@drawable/bg_status_chip"
-                            android:backgroundTint="@color/statusActiva"
-                            android:layout_marginEnd="6dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Servicio Operando - Disponible"
-                            android:textColor="@color/statusActiva"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                        android:text="Servicio Operando - Disponible"
+                        android:textColor="@color/statusActiva"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Card: Responsable -->
             <com.google.android.material.card.MaterialCardView
@@ -304,7 +304,6 @@
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

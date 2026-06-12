@@ -31,14 +31,15 @@
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_marginBottom="24dp"
-                android:contentDescription="arpAPP Logo"
-                app:srcCompat="@drawable/ic_arpapp_logo" />
+                android:contentDescription="arpAPP Login Logo"
+                app:srcCompat="@drawable/ic_arpapp_login" />
 
             <!-- Title -->
             <TextView
+                android:id="@+id/tv_login_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="arpAPP"
+                android:text="ARPApp"
                 android:textColor="@android:color/white"
                 android:textSize="28sp"
                 android:textStyle="bold"

@@ -180,24 +180,42 @@
         android:id="@+id/btnContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_inscribirse"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_margin="16dp"
+            android:layout_weight="3"
+            android:layout_marginEnd="8dp"
             android:text="@string/btn_inscribirse"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             app:cornerRadius="24dp"
             app:backgroundTint="@color/colorSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_ver_calendario"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:cornerRadius="24dp"
+            app:icon="@drawable/ic_calendar"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:strokeColor="@color/colorSecondary"
+            app:iconTint="@color/colorSecondary" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,151 +7,150 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor">
 
+    <!-- Header Fijo (Anclado al tope) -->
+    <FrameLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_community"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+            android:id="@+id/customHeader"
+            layout="@layout/view_common_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <FrameLayout
+            <!-- Back button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ajustes_back"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Volver a Más"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <!-- Notifications Card -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_header_community"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
 
-                <include
-                    android:id="@+id/customHeader"
-                    layout="@layout/view_common_header"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            <LinearLayout
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notificaciones"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notificaciones Push"
+                        android:checked="true"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Boletines de Eventos por Correo"
+                        android:checked="false"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Privacy & Info Card -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E0E0E0"
+                app:cardBackgroundColor="@color/surfaceColor">
 
-                <!-- Back button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_ajustes_back"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="← Volver a Más"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp" />
-
-                <!-- Notifications Card -->
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="1dp"
-                    app:strokeColor="#E0E0E0"
-                    app:cardBackgroundColor="@color/surfaceColor">
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
+                        android:text="Privacidad y App"
+                        android:textColor="@color/colorOnSurface"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:layout_marginBottom="12dp" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Notificaciones"
-                            android:textColor="@color/colorOnSurface"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:fontFamily="serif"
-                            android:layout_marginBottom="12dp" />
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Notificaciones Push"
-                            android:checked="true"
-                            android:textColor="@color/textSecondary"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="8dp"/>
-
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Boletines de Eventos por Correo"
-                            android:checked="false"
-                            android:textColor="@color/textSecondary"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Privacy & Info Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="1dp"
-                    app:strokeColor="#E0E0E0"
-                    app:cardBackgroundColor="@color/surfaceColor">
-
-                    <LinearLayout
+                    <com.google.android.material.switchmaterial.SwitchMaterial
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
+                        android:text="Perfil Público Universitario"
+                        android:checked="true"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="12dp"/>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Privacidad y App"
-                            android:textColor="@color/colorOnSurface"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:fontFamily="serif"
-                            android:layout_marginBottom="12dp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/dividerColor"
+                        android:layout_marginBottom="12dp"/>
 
-                        <com.google.android.material.switchmaterial.SwitchMaterial
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Perfil Público Universitario"
-                            android:checked="true"
-                            android:textColor="@color/textSecondary"
-                            android:textSize="14sp"
-                            android:layout_marginBottom="12dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Versión de la aplicación: 1.0.0 (API 35)\nDesarrollado para la Facultad de Artes ARPA - BUAP"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="12sp"
+                        android:lineSpacingMultiplier="1.2" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/dividerColor"
-                            android:layout_marginBottom="12dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Versión de la aplicación: 1.0.0 (API 35)\nDesarrollado para la Facultad de Artes ARPA - BUAP"
-                            android:textColor="@color/textSecondary"
-                            android:textSize="12sp"
-                            android:lineSpacingMultiplier="1.2" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
