@@ -100,6 +100,16 @@
                         android:fontFamily="serif"
                         android:layout_marginBottom="8dp"/>
 
+                    <!-- Event Image (ShapeableImageView) -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_cal_event_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="12dp"
+                        app:shapeAppearanceOverlay="@style/RoundedImageStyle"
+                        android:visibility="gone" />
+
                     <!-- Description (Sans-serif) -->
                     <TextView
                         android:id="@+id/tv_event_desc"
