@@ -123,6 +123,16 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Event Image -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="24dp"
+                app:shapeAppearanceOverlay="@style/RoundedImageStyle"
+                android:visibility="gone" />
+
             <!-- Description Section -->
             <TextView
                 android:layout_width="match_parent"

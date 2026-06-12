@@ -30,6 +30,13 @@ public class EventCarouselAdapter extends RecyclerView.Adapter<EventCarouselAdap
         holder.binding.tvEventDate.setText(item.getDate());
         holder.binding.tvEventCategory.setText(item.getCategory().toUpperCase());
         holder.binding.tvEventLocation.setText(item.getDesc());
+
+        if (item.getImageResId() != 0) {
+            holder.binding.ivEventImage.setImageResource(item.getImageResId());
+            holder.binding.ivEventImage.setVisibility(android.view.View.VISIBLE);
+        } else {
+            holder.binding.ivEventImage.setVisibility(android.view.View.GONE);
+        }
     }
 
     @Override

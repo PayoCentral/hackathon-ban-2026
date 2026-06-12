@@ -38,8 +38,16 @@ public class ClubsAdapter extends RecyclerView.Adapter<ClubsAdapter.ViewHolder> 
         ClubItem item = clubList.get(position);
         holder.binding.tvClubTitle.setText(item.getTitle());
         holder.binding.tvClubCategory.setText(item.getCategory());
+        holder.binding.tvClubSchedule.setText(item.getSchedule());
         holder.binding.tvClubDesc.setText(item.getDesc());
         holder.binding.tvClubStatus.setText(item.getStatus());
+
+        if (item.getImageResId() != 0) {
+            holder.binding.ivClubImage.setImageResource(item.getImageResId());
+            holder.binding.ivClubImage.setVisibility(View.VISIBLE);
+        } else {
+            holder.binding.ivClubImage.setVisibility(View.GONE);
+        }
 
         // Get context
         android.content.Context context = holder.itemView.getContext();

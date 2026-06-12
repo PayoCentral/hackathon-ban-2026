@@ -51,7 +51,7 @@
                 android:background="@drawable/bg_status_chip" />
         </RelativeLayout>
 
-        <!-- Category/Schedule (Sans-serif) -->
+        <!-- Category (Sans-serif) -->
         <TextView
             android:id="@+id/tv_club_category"
             android:layout_width="match_parent"
@@ -60,7 +60,27 @@
             android:textSize="12sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Schedule (Sans-serif) -->
+        <TextView
+            android:id="@+id/tv_club_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textSecondary"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif"
             android:layout_marginBottom="8dp" />
+
+        <!-- Event Image (ShapeableImageView) -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_club_image"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            app:shapeAppearanceOverlay="@style/RoundedImageStyle"
+            android:visibility="gone" />
 
         <!-- Description (Sans-serif) -->
         <TextView

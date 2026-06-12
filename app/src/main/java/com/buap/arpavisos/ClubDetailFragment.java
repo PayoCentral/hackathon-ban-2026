@@ -36,12 +36,20 @@ public class ClubDetailFragment extends Fragment {
             String status = args.getString("status", "Activa");
             String desc = args.getString("desc", "");
             String schedule = args.getString("schedule", "");
+            int imageResId = args.getInt("imageResId", 0);
 
             binding.customHeader.tvHeaderTitle.setText(title);
             binding.tvDetailCategory.setText(category);
             binding.tvDetailStatus.setText(status);
             binding.tvDetailDesc.setText(desc);
             binding.tvDetailSchedule.setText("Horario: " + schedule);
+
+            if (imageResId != 0) {
+                binding.ivDetailImage.setImageResource(imageResId);
+                binding.ivDetailImage.setVisibility(View.VISIBLE);
+            } else {
+                binding.ivDetailImage.setVisibility(View.GONE);
+            }
 
             // Dynamic status chip color mapping
             int statusColor;

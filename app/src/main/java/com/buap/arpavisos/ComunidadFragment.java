@@ -55,17 +55,20 @@ public class ComunidadFragment extends Fragment {
                         "Muestra de Fin de Semestre",
                         "Domingo 14 de Junio, 2026",
                         "Lugar: Explanada de la Facultad (10:00 - 18:00 hrs)",
-                        "Destacado"));
+                        "Destacado",
+                        R.drawable.event_muestra));
                 events.add(new NewsItem(
                         "Clase Magistral: Grabado",
                         "Jueves 18 de Junio, 2026",
                         "Lugar: Taller de Estampado (11:00 hrs)",
-                        "Talleres"));
+                        "Talleres",
+                        R.drawable.event_masterclass));
                 events.add(new NewsItem(
                         "Festival Cortos ARPA",
                         "Lunes 22 de Junio, 2026",
                         "Lugar: Auditorio Principal (16:00 hrs)",
-                        "Cine"));
+                        "Cine",
+                        R.drawable.event_cine));
 
                 EventCarouselAdapter carouselAdapter = new EventCarouselAdapter(events);
                 binding.rvEvents.setAdapter(carouselAdapter);

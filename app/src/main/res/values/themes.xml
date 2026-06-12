@@ -33,6 +33,11 @@
         <item name="cornerSizeTopLeft">0dp</item>
         <item name="cornerSizeTopRight">0dp</item>
     </style>
+
+    <!-- General rounded corners styling for event/club images -->
+    <style name="RoundedImageStyle">
+        <item name="cornerSize">16dp</item>
+    </style>
     <!-- Text appearance styles for BottomNavigationView animation -->
     <style name="NavInactiveText">
         <item name="android:textSize">11sp</item>
