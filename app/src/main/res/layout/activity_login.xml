@@ -5,17 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FE94CE"
-    android:padding="24dp"
+    android:background="@drawable/bg_login_gradient"
+    android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
 
-    <!-- Card Container for premium feel -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/surfaceColor"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,89 +22,102 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:gravity="center"
+            android:padding="32dp">
 
-            <!-- Logo ImageView -->
+            <!-- Logo de ARPA en blanco -->
             <ImageView
                 android:id="@+id/img_logo"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="24dp"
                 android:contentDescription="@string/login_title"
-                app:srcCompat="@drawable/logo_facultad" />
+                app:srcCompat="@drawable/logo_facultad"
+                app:tint="@android:color/white" />
 
             <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login_title"
-                android:textColor="@color/colorPrimary"
-                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_marginBottom="4dp"/>
+                android:fontFamily="serif"
+                android:layout_marginBottom="8dp" />
 
             <!-- Subtitle -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/login_subtitle"
-                android:textColor="@color/textSecondary"
-                android:textSize="12sp"
+                android:textColor="#B4C7FF"
+                android:textSize="14sp"
                 android:gravity="center"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="36dp" />
 
-            <!-- Username Field -->
+            <!-- TextInputLayout Username (OutlinedBox Minimalist White/Lavender) -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_username"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/hint_username"
-                app:startIconDrawable="@drawable/ic_clubs"
-                app:startIconTint="@color/colorPrimary"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusBottomEnd="10dp">
+                android:textColorHint="#B4C7FF"
+                app:hintTextColor="@android:color/white"
+                app:boxStrokeColor="@android:color/white"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="#B4C7FF"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColor="@color/colorOnSurface"
-                    android:textSize="15sp"/>
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Password Field -->
+            <!-- TextInputLayout Password (OutlinedBox Minimalist White/Lavender) -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_password"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="32dp"
                 android:hint="@string/hint_password"
+                android:textColorHint="#B4C7FF"
+                app:hintTextColor="@android:color/white"
+                app:boxStrokeColor="@android:color/white"
+                app:boxStrokeWidth="1.5dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:startIconDrawable="@drawable/ic_comunidad"
-                app:startIconTint="@color/colorPrimary"
+                app:startIconTint="#B4C7FF"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/colorPrimary"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusBottomEnd="10dp">
+                app:endIconTint="#B4C7FF"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorOnSurface"
-                    android:textSize="15sp"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Login Button -->
+            <!-- Button Access (Corners 28dp, Magenta Accent) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
@@ -115,24 +125,21 @@
                 android:text="@string/btn_login"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                app:cornerRadius="10dp"
-                app:backgroundTint="@color/colorPrimary"
-                android:layout_marginBottom="16dp"/>
+                android:textColor="@android:color/white"
+                app:cornerRadius="28dp"
+                app:backgroundTint="#EA3E99"
+                android:layout_marginBottom="24dp" />
 
-            <!-- Bypass helper text -->
+            <!-- Bypass Helper Text -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Acceso Demo: admin / 1234"
-                android:textColor="@color/textSecondary"
-                android:textSize="11sp"
+                android:textColor="#B4C7FF"
+                android:textSize="12sp"
                 android:gravity="center"
                 android:textStyle="italic" />
 
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

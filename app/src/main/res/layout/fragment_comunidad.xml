@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:fitsSystemWindows="true"
     tools:context=".ComunidadFragment">
 
     <!-- Scrollable content -->
@@ -29,13 +30,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:background="@color/surfaceColor">
+                android:background="@drawable/bg_header_community">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/feed_title"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@android:color/white"
                     android:textSize="26sp"
                     android:textStyle="bold"
                     android:fontFamily="serif" />
@@ -45,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/feed_subtitle"
-                    android:textColor="@color/textSecondary"
+                    android:textColor="#E6ECF4"
                     android:textSize="14sp"
                     android:fontFamily="sans-serif" />
             </LinearLayout>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:fitsSystemWindows="true"
     tools:context=".GaleriaFragment">
 
     <!-- Scrollable content container -->
@@ -25,13 +26,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:background="@color/surfaceColor">
+                android:background="@drawable/bg_header_gallery">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Galería ARPA"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@android:color/white"
                     android:textSize="26sp"
                     android:textStyle="bold"
                     android:fontFamily="serif" />
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="Explora y comparte las creaciones artísticas y exposiciones estudiantiles de la comunidad."
-                    android:textColor="@color/textSecondary"
+                    android:textColor="#FFF0F5"
                     android:textSize="14sp"
                     android:fontFamily="sans-serif" />
             </LinearLayout>
