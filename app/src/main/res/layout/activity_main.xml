@@ -22,8 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabCradleMargin="8dp"
-        app:fabCradleRoundedCornerRadius="24dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="2dp"
+        app:fabCradleRoundedCornerRadius="16dp"
         app:backgroundTint="@color/surfaceColor">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
