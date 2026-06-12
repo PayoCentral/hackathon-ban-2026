@@ -39,28 +39,28 @@ public class ClubsFragment extends Fragment {
         List<ClubItem> clubs = new ArrayList<>();
         clubs.add(new ClubItem(
                 "Taller de Grabado Experimental",
-                "Artes Plásticas • Coord. Andrei Carro",
+                "Artes Plásticas • Maestro a cargo: Prueba",
                 "En curso",
                 "Taller enfocado en explorar técnicas de impresión no convencionales, uso de tintas alternativas y soportes experimentales.",
                 "Martes y Jueves de 04:00 PM a 06:00 PM",
                 R.drawable.club_grabado));
         clubs.add(new ClubItem(
                 "Taller de Pintura Óleo",
-                "Artes Plásticas • Sábados 10:00 hrs",
+                "Artes Plásticas • Maestro a cargo: Prueba",
                 "Activa",
                 "Aprende las técnicas tradicionales del óleo, mezcla de pigmentos y teoría del color. Dirigido a principiantes e intermedios.",
                 "Sábados de 10:00 AM a 01:00 PM",
                 R.drawable.club_oleo));
         clubs.add(new ClubItem(
                 "Colectivo de Fotografía Urbana",
-                "Fotografía • Jueves 16:00 hrs",
+                "Fotografía • Maestro a cargo: Prueba",
                 "Activa",
                 "Salidas de campo para capturar la esencia de la arquitectura y vida citadina. Crítica técnica y edición digital en laboratorio.",
                 "Jueves de 04:00 PM a 06:00 PM",
                 R.drawable.club_foto));
         clubs.add(new ClubItem(
                 "Taller de Grabado y Xilografía",
-                "Artes Plásticas • Martes 11:00 hrs",
+                "Artes Plásticas • Maestro a cargo: Prueba",
                 "Pasada",
                 "Introducción al linóleo y xilografía en madera. Uso de gubias y prensa calcográfica. Ciclo Primavera finalizado.",
                 "Martes de 11:00 AM a 01:00 PM",
